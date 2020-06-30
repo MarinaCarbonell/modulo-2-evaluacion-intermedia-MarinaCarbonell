@@ -4,8 +4,9 @@
 
 const fillNumber = document.querySelector ('.js-input-number');
 const testButton = document.querySelector ('.js-test');
-const clue = document.querySelector ('.js-clue');
-const attemps = document.querySelector ('.js-attemps');
+const inputClue = document.querySelector ('.js-clue');
+const inputAttemps = document.querySelector ('.js-attemps');
+let attemps = 0;
 
 //FUNCTIONS
 
@@ -20,14 +21,17 @@ function pushTestButton () {
   const inputNumber = fillNumber.value;
   console.log (inputNumber);
   if (inputNumber < randomNumber && inputNumber > 0) {
-    clue.innerHTML = 'Demasiado bajo';
+    inputClue.innerHTML = 'Demasiado bajo';
   } else if (inputNumber > randomNumber && inputNumber < 100) {
-    clue.innerHTML = 'Demasiado alto';
+    inputClue.innerHTML = 'Demasiado alto';
   } else if (inputNumber < 0 || inputNumber > 100) {
-    clue.innerHTML = 'El número debe estar entre 1 y 100.';
+    inputClue.innerHTML = 'El número debe estar entre 1 y 100.';
   } else {
-    clue.innerHTML = 'Has ganado campeona!!!';
+    inputClue.innerHTML = 'Has ganado campeona!!!';
   }
+
+  attemps = attemps + 1;
+  inputAttemps.innerHTML = `Número de intentos: ${attemps}`;
 }
 
 //LISTENERS
