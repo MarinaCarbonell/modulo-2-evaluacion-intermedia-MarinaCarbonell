@@ -26,7 +26,7 @@ function pushTestButton () {
     inputClue.innerHTML = 'Demasiado alto';
   } else if (inputNumber < 0 || inputNumber > 100) {
     inputClue.innerHTML = 'El número debe estar entre 1 y 100.';
-  } else {
+  } else if (inputNumber == randomNumber) {
     inputClue.innerHTML = 'Has ganado campeona!!!';
   }
 
