@@ -1,0 +1,23 @@
+.guess-number{
+    color:grey;
+    font-weight: 600;
+}
+
+.structure{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.test{
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    margin: 15px;
+}
+
+.clue, .attemps{
+    border: 3px solid grey;
+    margin: 15px;
+    padding: 10px;
+}
