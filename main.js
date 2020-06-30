@@ -19,7 +19,6 @@ console.log (randomNumber);
 
 function pushTestButton () {
   const inputNumber = fillNumber.value;
-  console.log (inputNumber);
   if (inputNumber < randomNumber && inputNumber > 0) {
     inputClue.innerHTML = 'Demasiado bajo';
   } else if (inputNumber > randomNumber && inputNumber < 100) {
