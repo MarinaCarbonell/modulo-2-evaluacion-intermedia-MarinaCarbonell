@@ -1,14 +1,10 @@
 'use strict';
 
-//SELECTORS
-
 const fillNumber = document.querySelector ('.js-input-number');
 const testButton = document.querySelector ('.js-test');
 const inputClue = document.querySelector ('.js-clue');
 const inputAttemps = document.querySelector ('.js-attemps');
 let attemps = 0;
-
-//FUNCTIONS
 
 function getRandomNumber (max) {
   return Math.ceil (Math.random () * max);
@@ -16,6 +12,11 @@ function getRandomNumber (max) {
 
 const randomNumber = getRandomNumber (100);
 console.log (randomNumber);
+
+function runAttemps (attemps) {
+  attemps = attemps + 1;
+  inputAttemps.innerHTML = `Número de intentos: ${attemps}`;
+}
 
 function pushTestButton () {
   const inputNumber = fillNumber.value;
@@ -28,11 +29,7 @@ function pushTestButton () {
   } else if (inputNumber == randomNumber) {
     inputClue.innerHTML = 'Has ganado campeona!!!';
   }
-
-  attemps = attemps + 1;
-  inputAttemps.innerHTML = `Número de intentos: ${attemps}`;
+  runAttemps (attemps);
 }
-
-//LISTENERS
 
 testButton.addEventListener ('click', pushTestButton);
